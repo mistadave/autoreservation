@@ -6,6 +6,7 @@ namespace AutoReservation.Dal
 {
     public class AutoReservationContext : DbContext
     {
+        public DbSet<Reservation> Reservationen { get; set; }
         public AutoReservationContext()
         {
             // Ensures that the database will be initialized
@@ -16,6 +17,7 @@ namespace AutoReservation.Dal
 
             // ----------------------------------------------------------------------------------------------------
             // Choose one of these three options:
+
 
             // Use for real "database first"
             //      - Database will NOT be created by Entity Framework
@@ -36,7 +38,7 @@ namespace AutoReservation.Dal
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            
             // Set up hierarchical mapping in fluent API
             //      Remarks:
             //      This could not be done using attributes on business entities
