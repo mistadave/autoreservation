@@ -3,11 +3,6 @@
   <Class Name="AutoReservation.Common.DataTransferObjects.AutoDto">
     <Position X="1" Y="3.25" Width="1.5" />
     <Members>
-      <Field Name="autoKlasse" Hidden="true" />
-      <Field Name="basistarif" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="marke" Hidden="true" />
-      <Field Name="tagestarif" Hidden="true" />
       <Method Name="ToString" Hidden="true" />
     </Members>
     <AssociationLine Name="AutoKlasse" Type="AutoReservation.Common.DataTransferObjects.AutoKlasse" FixedFromPoint="true">
@@ -20,7 +15,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAICAAASAACAEAAFBAAAAQQAAAAAAAAAAAAAAAAAAhA=</HashCode>
+      <HashCode>AAACAAASAACAAAAEBAAABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataTransferObjects\AutoDto.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -30,19 +25,8 @@
   <Class Name="AutoReservation.Common.DataTransferObjects.ReservationDto">
     <Position X="4.25" Y="3.25" Width="1.5" />
     <Members>
-      <Field Name="auto" Hidden="true" />
-      <Field Name="bis" Hidden="true" />
-      <Field Name="kunde" Hidden="true" />
-      <Field Name="reservationsNr" Hidden="true" />
       <Method Name="ToString" Hidden="true" />
-      <Field Name="von" Hidden="true" />
     </Members>
-    <InheritanceLine Type="AutoReservation.Common.DataTransferObjects.Core.DtoBase&lt;T&gt;" FixedToPoint="true">
-      <Path>
-        <Point X="5" Y="2.69" />
-        <Point X="5" Y="3.25" />
-      </Path>
-    </InheritanceLine>
     <AssociationLine Name="Auto" Type="AutoReservation.Common.DataTransferObjects.AutoDto" FixedToPoint="true">
       <Path>
         <Point X="4.25" Y="3.938" />
@@ -56,7 +40,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAQAACIAAAECAAAACAAAAAgIAAAICAAACAAABA=</HashCode>
+      <HashCode>AAAAAAAQAACAAAAECAAABAAAAAAgAAAAACAAACAAAAA=</HashCode>
       <FileName>DataTransferObjects\ReservationDto.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -67,21 +51,17 @@
   <Class Name="AutoReservation.Common.DataTransferObjects.KundeDto">
     <Position X="7" Y="3.25" Width="1.5" />
     <Members>
-      <Field Name="geburtsdatum" Hidden="true" />
-      <Field Name="id" Hidden="true" />
-      <Field Name="nachname" Hidden="true" />
       <Method Name="ToString" Hidden="true" />
-      <Field Name="vorname" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAgCAAAAEAAAAgAAAAIAAAAACAAAAAgAAAhA=</HashCode>
+      <HashCode>AAACAAAAAACAAAAEAAAAhAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>DataTransferObjects\KundeDto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AutoReservation.Common.DataTransferObjects.Core.DtoBase&lt;T&gt;">
     <Position X="4" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAACAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataTransferObjects\Core\DtoBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
