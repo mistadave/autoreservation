@@ -7,20 +7,95 @@ namespace AutoReservation.Common.DataTransferObjects
     public class KundeDto : DtoBase<KundeDto>
     {
 
-        public int Id { get; set; }
-        public string Nachname { get; set; }
-        public string Vorname { get; set; }
-        public DateTime Geburtsdatum { get; set; }
-        public DateTime RowVersion { get; set; }
+        private int id;
+        private string nachname;
+        private string vorname;
+        private DateTime geburtsdatum;
+        private DateTime rowversion;
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                    OnPropertyChanged(nameof(Id));
+                }
+
+            }
+        }
+
+        public string Nachname
+        {
+            get
+            {
+                return nachname;
+            }
+            set
+            {
+                if (nachname != value)
+                {
+                    nachname = value;
+                    OnPropertyChanged(nameof(Nachname));
+                }
+            }
+        }
+        public string Vorname
+        {
+            get
+            {
+                return vorname;
+            }
+            set
+            {
+                if (vorname != value)
+                {
+                    vorname = value;
+                    OnPropertyChanged(nameof(Vorname));
+                }
+            }
+        }
+
+        public DateTime Geburtsdatum {
+            get
+            {
+                return geburtsdatum;
+            }
+            set
+            {
+                if(geburtsdatum != value)
+                {
+                    geburtsdatum = value;
+                    OnPropertyChanged(nameof(Geburtsdatum));
+                }
+            }
+        }
+
+        public DateTime RowVersion {
+            get
+            {
+                return rowversion;
+            }
+            set
+            {
+                if(rowversion != value)
+                {
+                    rowversion = value;
+                    OnPropertyChanged(nameof(RowVersion));
+                }
+            }
+        }
 
         public override string Validate()
         {
             StringBuilder error = new StringBuilder();
-            if (string.IsNullOrEmpty(Nachname))
+            if (string.IsNullOrEmpty(nachname))
             {
                 error.AppendLine("- Nachname ist nicht gesetzt.");
             }
-            if (string.IsNullOrEmpty(Vorname))
+            if (string.IsNullOrEmpty(vorname))
             {
                 error.AppendLine("- Vorname ist nicht gesetzt.");
             }

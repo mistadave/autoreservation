@@ -6,13 +6,104 @@ namespace AutoReservation.Common.DataTransferObjects
 {
     public class ReservationDto : DtoBase<ReservationDto>
     {
+        private int reservationsnr;
+        private DateTime von;
+        private DateTime bis;
+        private AutoDto auto;
+        private KundeDto kunde;
+        private DateTime rowversion;
 
-        public int ReservationsNr { get; set; }
-        public DateTime Von { get; set; }
-        public DateTime Bis { get; set; }
-        public AutoDto Auto { get; set; }
-        public KundeDto Kunde { get; set; }
-        public DateTime RowVersion { get; set; }
+        public int ReservationsNr
+        {
+            get
+            {
+                return reservationsnr;
+            }
+            set
+            {
+                if(reservationsnr != value)
+                {
+                    reservationsnr = value;
+                    OnPropertyChanged(nameof(ReservationsNr));
+                }
+            }
+        }
+
+        public DateTime Von
+        {
+            get
+            {
+                return von;
+            }
+            set
+            {
+                if(von != value)
+                {
+                    von = value;
+                    OnPropertyChanged(nameof(Von));
+                }
+            }
+        }
+
+        public DateTime Bis
+        {
+            get
+            {
+                return bis;
+            }
+            set
+            {
+                if (bis != value)
+                {
+                    bis = value;
+                    OnPropertyChanged(nameof(Bis));
+                }
+            }
+        }
+        public AutoDto Auto
+        {
+            get
+            {
+                return auto;
+            }
+            set
+            {
+                if (auto != value)
+                {
+                    auto = value;
+                    OnPropertyChanged(nameof(Auto));
+                }
+            }
+        }
+        public KundeDto Kunde
+        {
+            get
+            {
+                return kunde;
+            }
+            set
+            {
+                if(kunde != value)
+                {
+                    kunde = value;
+                    OnPropertyChanged(nameof(Kunde));
+                }
+            }
+        }
+        public DateTime RowVersion
+        {
+            get
+            {
+                return rowversion;
+            }
+            set
+            {
+                if(rowversion != value)
+                {
+                    rowversion = value;
+                    OnPropertyChanged(nameof(RowVersion));                }
+            }
+        }
 
         public override string Validate()
         {

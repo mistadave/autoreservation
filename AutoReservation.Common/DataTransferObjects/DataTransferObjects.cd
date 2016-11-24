@@ -27,6 +27,9 @@
     <Members>
       <Method Name="ToString" Hidden="true" />
     </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <AssociationLine Name="Auto" Type="AutoReservation.Common.DataTransferObjects.AutoDto" FixedToPoint="true">
       <Path>
         <Point X="4.25" Y="3.938" />
@@ -35,12 +38,12 @@
     </AssociationLine>
     <AssociationLine Name="Kunde" Type="AutoReservation.Common.DataTransferObjects.KundeDto" FixedToPoint="true">
       <Path>
-        <Point X="5.75" Y="3.938" />
-        <Point X="7" Y="3.938" />
+        <Point X="5.75" Y="4.011" />
+        <Point X="7" Y="4.011" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAACAAAAECAAABAAAAAAgAAAAACAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAACIAAAECAAABCAAAAAgIAAEICAAACAAAAA=</HashCode>
       <FileName>DataTransferObjects\ReservationDto.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -53,8 +56,11 @@
     <Members>
       <Method Name="ToString" Hidden="true" />
     </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAACAAAAEAAAAhAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAACAAAAAgCAAAAEAAAAhAAAAIAAAAAGAAAAAgAAAgA=</HashCode>
       <FileName>DataTransferObjects\KundeDto.cs</FileName>
     </TypeIdentifier>
   </Class>

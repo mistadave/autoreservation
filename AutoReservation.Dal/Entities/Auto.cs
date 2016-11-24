@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,6 +21,6 @@ namespace AutoReservation.Dal.Entities
         public int AutoKlasse { get; set; }
         public virtual ICollection<Reservation> Reservationen { get; set; }
         [Column("RowVersion"), Required]
-        public TimestampAttribute RowVersion { get; set; }
+        public DateTime RowVersion { get; set; }
     } 
 }

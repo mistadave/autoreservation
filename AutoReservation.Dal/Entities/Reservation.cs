@@ -19,6 +19,6 @@ namespace AutoReservation.Dal.Entities
         [Column("Bis"), Required]
         public DateTime Bis { get; set; }
         [Column("RowVersion"), Required]
-        public TimestampAttribute RowVersion { get; set; }
+        public DateTime RowVersion { get; set; }
     }
 }
