@@ -6,10 +6,8 @@ namespace AutoReservation.Dal
 {
     public class AutoReservationContext : DbContext
     {
-        public virtual DbSet<Auto> Autos { get; set; }
-        public virtual DbSet<Kunde> Kunden { get; set; }
-        public virtual DbSet<Reservation> Reservationen { get; set; }
-        public AutoReservationContext()
+        public AutoReservationContext() 
+            : base("name=AutoReservationEntities")
         {
             // Ensures that the database will be initialized
             Database.Initialize(false);
@@ -46,5 +44,8 @@ namespace AutoReservation.Dal
             //      This could not be done using attributes on business entities
             //      since the discriminator (AutoKlasse) must not be part of the entity.
         }
+        public virtual DbSet<Auto> Autos { get; set; }
+        public virtual DbSet<Kunde> Kunden { get; set; }
+        public virtual DbSet<Reservation> Reservationen { get; set; }
     }
 }
