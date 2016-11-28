@@ -1,19 +1,121 @@
 ﻿using AutoReservation.Common.DataTransferObjects.Core;
 using System.Text;
 using System;
+using System.Runtime.Serialization;
 
 namespace AutoReservation.Common.DataTransferObjects
 {
+    [DataContract]
     public class AutoDto : DtoBase<AutoDto>
     {
 
-        public int Id { get; set; }
-        public string Marke { get; set; }
-        public int Basistarif { get; set; }
-        public int Tagestarif { get; set; }
-        public AutoKlasse AutoKlasse { get; set; }
-        public DateTime RowVersion { get; set; }
+        private int id;
+        private string marke;
+        private int basistarif;
+        private int tagestarif;
+        private AutoKlasse autoklasse;
+        private DateTime rowversion;
 
+        [DataMember]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                    OnPropertyChanged(nameof(Id));
+                }
+            }
+        }
+
+        [DataMember]
+        public string Marke
+        {
+            get
+            {
+                return marke;
+            }
+            set
+            {
+                if(marke != value)
+                {
+                    marke = value;
+                    OnPropertyChanged(nameof(Marke));
+                }
+            }
+        }
+        [DataMember]
+        public int Basistarif
+        {
+            get
+            {
+                return basistarif;
+            }
+            set
+            {
+                if (basistarif != value)
+                {
+                    basistarif = value;
+                    OnPropertyChanged(nameof(Basistarif));
+                }
+            }
+        }
+
+        [DataMember]
+        public int Tagestarif
+        {
+            get
+            {
+                return tagestarif;
+            }
+            set
+            {
+                if (tagestarif != value)
+                {
+                    tagestarif = value;
+                    OnPropertyChanged(nameof(Tagestarif));
+                }
+            }
+        }
+
+        [DataMember]
+        public AutoKlasse AutoKlasse
+        {
+            get
+            {
+                return autoklasse;
+            }
+            set
+            {
+                if(autoklasse != value)
+                {
+                    autoklasse = value;
+                    OnPropertyChanged(nameof(AutoKlasse));
+                }
+            }
+        }
+
+        [DataMember]
+        public DateTime RowVersion
+        {
+            get
+            {
+                return rowversion;
+            }
+            set
+            {
+                if (rowversion != value)
+                {
+                    rowversion = value;
+                    OnPropertyChanged(nameof(RowVersion));
+                }
+            }
+        }
 
         public override string Validate()
         {
