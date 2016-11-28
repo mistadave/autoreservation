@@ -16,11 +16,27 @@ namespace AutoReservation.Dal.Entities
         public string Marke { get; set; }
         [Column("Tagestarif"), Required]
         public int Tagestarif { get; set; }
-        public int Basistarif { get; set; }
+       
         [Column("AutoKlasse"), Required]
         public int AutoKlasse { get; set; }
         public virtual ICollection<Reservation> Reservationen { get; set; }
         [Column("RowVersion"), Required]
         public DateTime RowVersion { get; set; }
-    } 
+    }
+
+    public class StandardAuto : Auto
+    {
+            
+    }
+
+    public class MittelklasseAuto : Auto
+    {
+
+    }
+
+    public class LuxusklasseAuto : Auto
+    {
+        [Column("BasisTarif")]
+        public int Basistarif { get; set; }
+    }
 }

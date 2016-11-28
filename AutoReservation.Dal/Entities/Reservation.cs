@@ -9,11 +9,15 @@ namespace AutoReservation.Dal.Entities
     {
         [Key]
         [Column("Id"), Required]
-        public int Id { get; set; }
+        public int ReservationsNr { get; set; }
         [ForeignKey("AutoId"), Required]
-        public virtual Auto AutoId { get; set; }
+        public int AutoId { get; set; }
+        [ForeignKey("Auto"), Required]
+        public virtual Auto Auto { get; set; }
         [ForeignKey("KundeId"), Required]
-        public virtual Kunde KundenId { get; set; }
+        public int KundeId { get; set; }
+        [ForeignKey("Kunde"), Required]
+        public virtual Kunde Kunde { get; set; }
         [Column("Von"), Required]
         public DateTime Von { get; set; }
         [Column("Bis"), Required]
