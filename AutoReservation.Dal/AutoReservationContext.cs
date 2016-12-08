@@ -1,16 +1,17 @@
 ﻿using AutoReservation.Dal.Entities;
 using AutoReservation.Dal.Migrations;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace AutoReservation.Dal
 {
     public class AutoReservationContext : DbContext
     {
         public AutoReservationContext() 
-            : base("name=AutoReservationEntities")
+            : base("AutoReservationContext")
         {
             // Ensures that the database will be initialized
-            Database.Initialize(false);
+            //Database.Initialize(false);
 
             // Disable lazy loading
             Configuration.LazyLoadingEnabled = false;
@@ -37,6 +38,7 @@ namespace AutoReservation.Dal
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); //Prevents pluralizing of table names
             base.OnModelCreating(modelBuilder);
             
             // Set up hierarchical mapping in fluent API

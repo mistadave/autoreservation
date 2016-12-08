@@ -6,10 +6,8 @@ using System.Data.Entity;
 
 namespace AutoReservation.Dal.Entities
 {
-    [Table("Auto")]
     public abstract class Auto
     {
-
         public Auto()
         {
             this.Reservationen = new HashSet<Reservation>();
@@ -18,10 +16,9 @@ namespace AutoReservation.Dal.Entities
         public int Id { get; set; }
         public string Marke { get; set; }
         public int Tagestarif { get; set; }
-       
-        public int AutoKlasse { get; set; }
+        public byte[] RowVersion { get; set; }
 
         public virtual ICollection<Reservation> Reservationen { get; set; }
-        public DateTime RowVersion { get; set; }
+       
     }
 }
