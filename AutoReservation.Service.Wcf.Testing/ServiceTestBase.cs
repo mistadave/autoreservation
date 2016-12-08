@@ -24,7 +24,10 @@ namespace AutoReservation.Service.Wcf.Testing
         [TestMethod]
         public void GetAutosTest()
         {
-            Assert.Inconclusive("Test not implemented.");
+            AutoReservationService service = new AutoReservationService();
+            List<AutoDto> autos = service.Autos;
+            Assert.AreEqual(3, autos.Count);
+            //Assert.Inconclusive("Test not implemented.");
         }
 
         [TestMethod]
@@ -46,6 +49,7 @@ namespace AutoReservation.Service.Wcf.Testing
         [TestMethod]
         public void GetAutoByIdTest()
         {
+
             Assert.Inconclusive("Test not implemented.");
         }
 
