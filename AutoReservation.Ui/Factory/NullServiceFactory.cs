@@ -23,9 +23,12 @@ namespace AutoReservation.Ui.Factory
         public AutoDto InsertAuto(AutoDto auto) => null;
         public KundeDto InsertKunde(KundeDto kunde) => null;
         public ReservationDto InsertReservation(ReservationDto reservation) => null;
-        public AutoDto UpdateAuto(AutoDto auto) => null;
-        public KundeDto UpdateKunde(KundeDto kunde) => null;
-        public ReservationDto UpdateReservation(ReservationDto reservation) => null;
+        public void UpdateAuto(AutoDto auto) { }
+        public void UpdateKunde(KundeDto kunde) { }
+        public void UpdateReservation(ReservationDto reservation) { }
+        //public AutoDto UpdateAuto(AutoDto auto) => null;
+        //public KundeDto UpdateKunde(KundeDto kunde) => null;
+        //public ReservationDto UpdateReservation(ReservationDto reservation) => null;
         public void DeleteAuto(AutoDto auto) { }
         public void DeleteKunde(KundeDto kunde) { }
         public void DeleteReservation(ReservationDto reservation) { }
