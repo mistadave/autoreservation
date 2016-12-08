@@ -2,6 +2,7 @@
 using AutoReservation.TestEnvironment;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace AutoReservation.BusinessLayer.Testing
 {
@@ -31,19 +32,47 @@ namespace AutoReservation.BusinessLayer.Testing
         [TestMethod]
         public void UpdateAutoTest()
         {
-            Assert.Inconclusive("Test not implemented.");
+            Auto auto = Target.GetAutoById(1);
+            Assert.AreEqual(50, auto.Tagestarif);
+            auto.Tagestarif = 55;
+            Target.UpdateAuto(auto);
+            Auto auto2 = Target.GetAutoById(1);
+            Assert.AreEqual(55, auto2.Tagestarif);
+            auto.Tagestarif = 50;
+            Target.UpdateAuto(auto);
+            auto = Target.GetAutoById(1);
+            Assert.AreEqual(50, auto.Tagestarif);
         }
 
         [TestMethod]
         public void UpdateKundeTest()
         {
-            Assert.Inconclusive("Test not implemented.");
+            Kunde kunde = Target.GetKundeById(1);
+            Assert.AreEqual("Nass", kunde.Nachname);
+            kunde.Nachname = "Mooser";
+            Target.UpdateKunde(kunde);
+            kunde = null;
+            Assert.IsNull(kunde);
+            kunde = Target.GetKundeById(1);
+            Assert.AreEqual("Mooser", kunde.Nachname);
+            kunde.Nachname = "Nass";
+            Target.UpdateKunde(kunde);
         }
 
         [TestMethod]
         public void UpdateReservationTest()
         {
-            Assert.Inconclusive("Test not implemented.");
+            Reservation res = Target.GetReservationById(1);
+            Assert.AreEqual(1, res.AutoId);
+            res.AutoId = 2;
+            res.Auto = Target.GetAutoById(2);
+            Target.UpdateReservation(res);
+            res = null;
+            res = Target.GetReservationById(1);
+            Assert.AreEqual(2, res.AutoId);
+            res.AutoId = 1;
+            res.Auto = Target.GetAutoById(1);
+            Target.UpdateReservation(res);
         }
 
     }
