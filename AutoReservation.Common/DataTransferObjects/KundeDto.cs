@@ -12,7 +12,7 @@ namespace AutoReservation.Common.DataTransferObjects
         private string nachname;
         private string vorname;
         private DateTime geburtsdatum;
-        private DateTime rowversion;
+        private byte[] rowversion;
 
         [DataMember]
         public int Id
@@ -80,7 +80,7 @@ namespace AutoReservation.Common.DataTransferObjects
         }
 
         [DataMember]
-        public DateTime RowVersion {
+        public byte[] RowVersion {
             get
             {
                 return rowversion;

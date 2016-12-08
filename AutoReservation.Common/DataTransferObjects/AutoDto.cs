@@ -14,7 +14,7 @@ namespace AutoReservation.Common.DataTransferObjects
         private int basistarif;
         private int tagestarif;
         private AutoKlasse autoklasse;
-        private DateTime rowversion;
+        private byte[] rowversion;
 
         [DataMember]
         public int Id
@@ -101,7 +101,7 @@ namespace AutoReservation.Common.DataTransferObjects
         }
 
         [DataMember]
-        public DateTime RowVersion
+        public byte[] RowVersion
         {
             get
             {

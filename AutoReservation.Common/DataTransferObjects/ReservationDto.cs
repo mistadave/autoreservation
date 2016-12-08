@@ -13,7 +13,7 @@ namespace AutoReservation.Common.DataTransferObjects
         private DateTime bis;
         private AutoDto auto;
         private KundeDto kunde;
-        private DateTime rowversion;
+        private byte[] rowversion;
 
         [DataMember]
         public int ReservationsNr
@@ -101,7 +101,7 @@ namespace AutoReservation.Common.DataTransferObjects
         }
 
         [DataMember]
-        public DateTime RowVersion
+        public byte[] RowVersion
         {
             get
             {
