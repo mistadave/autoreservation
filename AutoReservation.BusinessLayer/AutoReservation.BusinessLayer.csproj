@@ -76,6 +76,7 @@
       <Link>Properties\AssemblyInfo.Shared.cs</Link>
     </Compile>
     <Compile Include="AutoReservationBusinessComponent.cs" />
+    <Compile Include="EntityNotFoundException.cs" />
     <Compile Include="LocalOptimisticConcurrencyException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
