@@ -86,18 +86,21 @@ namespace AutoReservation.Service.Wcf
         public AutoDto InsertAuto(AutoDto auto)
         {
             WriteActualMethod();
+            if (auto == null) return auto;
             return businessComponent.InsertAuto(auto.ConvertToEntity()).ConvertToDto();
         }
 
         public KundeDto InsertKunde(KundeDto kunde)
         {
             WriteActualMethod();
+            if (kunde == null) return kunde;
             return businessComponent.InsertKunde(kunde.ConvertToEntity()).ConvertToDto();
         }
 
         public ReservationDto InsertReservation(ReservationDto reservation)
         {
             WriteActualMethod();
+            if (reservation == null) return reservation;
             return businessComponent.InsertReservation(reservation.ConvertToEntity()).ConvertToDto();
             
         }
