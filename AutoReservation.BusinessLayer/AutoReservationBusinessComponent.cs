@@ -49,7 +49,9 @@ namespace AutoReservation.BusinessLayer
         {
             using (AutoReservationContext context = new AutoReservationContext())
             {
-                return context.Autos.SingleOrDefault(a => a.Id == id);
+                Auto auto = context.Autos.SingleOrDefault(a => a.Id == id);
+                if (auto == null) throw new EntityNotFoundException();
+                return auto;
             }
 
         }
@@ -58,7 +60,9 @@ namespace AutoReservation.BusinessLayer
         {
             using(AutoReservationContext context = new AutoReservationContext())
             {
-                return context.Kunden.SingleOrDefault(k => k.Id == id);
+                Kunde kunde = context.Kunden.SingleOrDefault(k => k.Id == id);
+                if (kunde == null) throw new EntityNotFoundException();
+                return kunde;
             }
          
         }
@@ -67,10 +71,12 @@ namespace AutoReservation.BusinessLayer
         {
             using (AutoReservationContext context = new AutoReservationContext())
             {
-                return context.Reservationen.
+                 Reservation reservation = context.Reservationen.
                     Include(r => r.Auto).
                     Include(r => r.Kunde).
                     SingleOrDefault(r => r.Id == id);
+                if (reservation == null) throw new EntityNotFoundException();
+                return reservation;
             }
         }
 
