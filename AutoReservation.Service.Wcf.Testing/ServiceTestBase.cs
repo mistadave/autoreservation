@@ -90,10 +90,18 @@ namespace AutoReservation.Service.Wcf.Testing
         }
 
         [TestMethod]
-        [ExpectedException(typeof(EntityNotFoundException), "Entity not found")]
         public void GetKundeByIdWithIllegalIdTest()
         {
-            KundeDto kunde = new AutoReservationService().GetKundeById(99);
+            try
+            {
+                KundeDto kunde = Target.GetKundeById(99);
+                Assert.Fail("Exception expected");
+            }
+            catch
+            {
+
+            }
+                        
         }
 
         [TestMethod]
@@ -267,8 +275,9 @@ namespace AutoReservation.Service.Wcf.Testing
         public void UpdateReservationWithOptimisticConcurrencyTest()
         {
             ReservationDto beforeReservation = Target.GetReservationByNr(1);
-            beforeReservation.Kunde = Target.GetKundeById(3);
+            beforeReservation.Von = new DateTime(2099, 02,22);
             Target.UpdateReservation(beforeReservation);
+            beforeReservation.Von = new DateTime(2099, 02, 21);
             Target.UpdateReservation(beforeReservation);
         }
 
